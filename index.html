@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Michael Meyers | EE Portfolio</title>
-<meta name="description" content="Interactive PCB portfolio — Michael Meyers, EE &amp; BME @ UCF"/>
+<meta name="description" content="Interactive PCB portfolio — Michael Meyers, M.S. EE @ UCF"/>
 <script src="three.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
@@ -284,11 +284,12 @@ nav{
 <div id="hud-tl">
   <div><span class="lbl">PCB</span> MEYERS-2025 REV2</div>
   <div><span class="lbl">ENG</span> M.MEYERS / UCF</div>
-  <div><span class="lbl">NET</span> EE+BME</div>
+  <div><span class="lbl">NET</span> M.S.EE</div>
 </div>
 <div id="hud-fps"><span class="lbl">FPS</span> —</div>
 <div id="hud-hint">
   <span class="key">SCROLL</span> zoom &nbsp;|&nbsp;
+  <span class="key">DRAG</span> orbit &nbsp;|&nbsp;
   <span class="key">CLICK</span> probe chip
 </div>
 
@@ -331,10 +332,10 @@ const CHIPS = [
     buildPanel: () => `
 <div class="ds-section">
   <h3>// DESCRIPTION</h3>
-  <p>EE &amp; BME student at the <span class="ds-hi">University of Central Florida</span>.
-  Passionate about the intersection of electronics, biomedical systems, and machine learning.
-  I build things that bridge the gap between hardware and software — from PCB layout to
-  PyTorch models.</p>
+  <p>M.S. Electrical Engineering graduate student at the <span class="ds-hi">University of Central Florida</span>,
+  with a background in EE and Biomedical Sciences. Currently working as an
+  <span class="ds-hi">Associate Electromechanical Engineer at Northrop Grumman</span>
+  — building things at the intersection of hardware, software, and systems engineering.</p>
   <p style="margin-top:.6rem">
     <a class="ds-link" href="https://github.com/mwmeyers03" target="_blank" rel="noopener">github.com/mwmeyers03</a>
     &nbsp;&nbsp;
@@ -346,25 +347,25 @@ const CHIPS = [
   <div class="ds-stat" style="grid-template-columns:1fr auto auto auto;font-size:.68rem;border-bottom:1px solid rgba(0,232,122,.15);padding-bottom:.3rem;margin-bottom:.2rem;color:var(--trace)">
     <span>Parameter</span><span>Min</span><span>Typ</span><span>Max</span>
   </div>
-  <div class="ds-stat"><span class="s-name">PCB Layout Skill</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
-  <div class="ds-stat"><span class="s-name">Signal Processing</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
-  <div class="ds-stat"><span class="s-name">Python / PyTorch</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
-  <div class="ds-stat"><span class="s-name">C / Embedded</span><span class="s-min">—</span><span class="s-typ ds-warn">MED</span><span class="s-max">—</span></div>
-  <div class="ds-stat"><span class="s-name">Operating Temp</span><span class="s-min">FL<br></span><span class="s-typ">HOT</span><span class="s-max">—</span></div>
+  <div class="ds-stat"><span class="s-name">Python / C / C++</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
+  <div class="ds-stat"><span class="s-name">PCB Design (KiCad/Altium)</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
+  <div class="ds-stat"><span class="s-name">AutoCAD Electrical</span><span class="s-min">—</span><span class="s-typ ds-hi">HIGH</span><span class="s-max">—</span></div>
+  <div class="ds-stat"><span class="s-name">MATLAB / PowerShell</span><span class="s-min">—</span><span class="s-typ ds-warn">MED</span><span class="s-max">—</span></div>
+  <div class="ds-stat"><span class="s-name">Operating Temp</span><span class="s-min">FL</span><span class="s-typ">HOT</span><span class="s-max">—</span></div>
 </div>
 <div class="ds-section">
   <h3>// PACKAGE INFORMATION</h3>
-  <div class="ds-signal"><span class="pin-num">PKG</span><span class="pin-name">UCF-Student</span><span class="pin-desc">Orlando, FL</span></div>
-  <div class="ds-signal"><span class="pin-num">MJR</span><span class="pin-name">EE + BME</span><span class="pin-desc">Dual B.S.</span></div>
-  <div class="ds-signal"><span class="pin-num">ORG</span><span class="pin-name">IEEE UCF</span><span class="pin-desc">Active Member</span></div>
+  <div class="ds-signal"><span class="pin-num">PKG</span><span class="pin-name">UCF-Grad</span><span class="pin-desc">M.S. EE — Est. Dec 2026</span></div>
+  <div class="ds-signal"><span class="pin-num">MJR</span><span class="pin-name">EE + BME</span><span class="pin-desc">Dual B.S. May 2025</span></div>
+  <div class="ds-signal"><span class="pin-num">LOC</span><span class="pin-name">Melbourne, FL</span><span class="pin-desc">Northrop Grumman</span></div>
   <div class="ds-signal"><span class="pin-num">VCC</span><span class="pin-name">3.3V Logic</span><span class="pin-desc">Always running</span></div>
 </div>
 <div class="ds-section">
   <h3>// APPLICATIONS</h3>
-  <span class="ds-tag">PCB Design</span><span class="ds-tag">Audio DSP</span>
-  <span class="ds-tag">Biomedical Devices</span><span class="ds-tag">ML/AI</span>
-  <span class="ds-tag">Robotics</span><span class="ds-tag">Signal Processing</span>
-  <span class="ds-tag">Embedded Systems</span><span class="ds-tag">Python</span>
+  <span class="ds-tag">PCB Design</span><span class="ds-tag">Electromechanical</span>
+  <span class="ds-tag">Embedded Systems</span><span class="ds-tag">Signal Processing</span>
+  <span class="ds-tag">Control Systems</span><span class="ds-tag">Python Automation</span>
+  <span class="ds-tag">Wiring Harness</span><span class="ds-tag">ML/AI</span>
 </div>`
   },
   {
@@ -375,9 +376,10 @@ const CHIPS = [
     buildPanel: () => `
 <div class="ds-section">
   <h3>// COMPONENT DESCRIPTION</h3>
-  <p>Dual-core processor implementing <span class="ds-hi">Electrical Engineering</span>
-  and <span class="ds-hi">Biomedical Engineering</span> coursework simultaneously.
-  High-bandwidth memory for circuits, signals, and biological systems.</p>
+  <p>Multi-core processor implementing graduate and undergraduate coursework at the
+  <span class="ds-hi">University of Central Florida</span>.
+  Dual undergraduate degrees in EE and Biomedical Sciences, now pursuing
+  <span class="ds-hi">M.S. Electrical Engineering</span>.</p>
 </div>
 <div class="ds-section">
   <h3>// DEVICE SPECIFICATIONS</h3>
@@ -385,77 +387,82 @@ const CHIPS = [
     <tr><th>Parameter</th><th>Value</th></tr>
     <tr><td>Institution</td><td>University of Central Florida</td></tr>
     <tr><td>Location</td><td>Orlando, FL</td></tr>
-    <tr><td>Degree</td><td>B.S. Electrical Engineering</td></tr>
-    <tr><td>Co-degree</td><td>B.S. Biomedical Engineering</td></tr>
-    <tr><td>Activities</td><td>IEEE UCF Student Chapter</td></tr>
+    <tr><td>Graduate</td><td>M.S. Electrical Engineering — GPA 4.0</td></tr>
+    <tr><td>Est. Graduation</td><td>December 2026</td></tr>
+    <tr><td>B.S. Degree 1</td><td>Electrical Engineering — GPA 3.75</td></tr>
+    <tr><td>B.S. Degree 2</td><td>Biomedical Sciences</td></tr>
+    <tr><td>Minor</td><td>Mathematical Biology</td></tr>
+    <tr><td>Honors</td><td>Honors in the Majors</td></tr>
+    <tr><td>Conferred</td><td>May 2025</td></tr>
   </table>
 </div>
 <div class="ds-section">
   <h3>// PIN DESCRIPTIONS (Coursework)</h3>
   <div class="ds-signal"><span class="pin-num">1</span><span class="pin-name">CIRCUITS</span><span class="pin-desc">Analog &amp; Digital Circuit Design</span></div>
   <div class="ds-signal"><span class="pin-num">2</span><span class="pin-name">DSP</span><span class="pin-desc">Digital Signal Processing</span></div>
-  <div class="ds-signal"><span class="pin-num">3</span><span class="pin-name">BME_INST</span><span class="pin-desc">Biomedical Instrumentation</span></div>
-  <div class="ds-signal"><span class="pin-num">4</span><span class="pin-name">ML_AI</span><span class="pin-desc">Machine Learning Systems</span></div>
+  <div class="ds-signal"><span class="pin-num">3</span><span class="pin-name">IMG_PROC</span><span class="pin-desc">Image Processing</span></div>
+  <div class="ds-signal"><span class="pin-num">4</span><span class="pin-name">COMP_VIS</span><span class="pin-desc">Computer Vision</span></div>
   <div class="ds-signal"><span class="pin-num">5</span><span class="pin-name">PCB_LAY</span><span class="pin-desc">PCB Design &amp; Fabrication</span></div>
   <div class="ds-signal"><span class="pin-num">6</span><span class="pin-name">EMBED</span><span class="pin-desc">Embedded Systems &amp; Firmware</span></div>
-  <div class="ds-signal"><span class="pin-num">7</span><span class="pin-name">SIG_INT</span><span class="pin-desc">Signal Integrity</span></div>
-  <div class="ds-signal"><span class="pin-num">8</span><span class="pin-name">GND</span><span class="pin-desc">IEEE UCF — Community Ground</span></div>
+  <div class="ds-signal"><span class="pin-num">7</span><span class="pin-name">SAW_DEV</span><span class="pin-desc">SAW Devices &amp; Systems</span></div>
+  <div class="ds-signal"><span class="pin-num">8</span><span class="pin-name">ML_AI</span><span class="pin-desc">Machine Learning Systems</span></div>
 </div>
 <div class="ds-section">
   <h3>// LOGIC FUNCTION</h3>
   <div class="ds-pre">Y = EE_THEORY ⊕ BME_APPLICATION
         ↓
 PASSION = f(circuits, biology, signals)
-GOAL    = ADVANCE(medical_technology)</div>
+GOAL    = ADVANCE(systems_engineering)</div>
 </div>`
   },
   {
-    ref: 'U3', name: '74HC-IEEE', part: 'SN74HC-UCF-A',
+    ref: 'U3', name: '74HC-EXP', part: 'SN74HC-WORK-A',
     pos: [6.2, 0.3, -2.8], size: [2.6, 0.5, 2.0], color: 0x0b1c0e,
     pinColor: 0x00e87a,
     title: 'Experience',
     buildPanel: () => `
 <div class="ds-section">
   <h3>// FUNCTIONAL DESCRIPTION</h3>
-  <p>High-speed CMOS project engineering IC.
-  Implements multi-domain problem solving across
-  <span class="ds-hi">power electronics, embedded systems,</span>
-  and <span class="ds-hi">biomedical applications</span>.</p>
+  <p>Multi-domain engineering experience spanning
+  <span class="ds-hi">aerospace electromechanical systems,</span>
+  <span class="ds-hi">industrial control systems,</span>
+  and <span class="ds-hi">lab automation</span>.</p>
 </div>
 <div class="ds-section">
-  <h3>// IEEE UCF — PROJECT ENGINEER</h3>
-  <p style="color:var(--amber);font-size:.7rem;margin-bottom:.5rem">IEEE UCF Student Chapter · Orlando, FL</p>
-  <p>Active member of the <span class="ds-hi">IEEE UCF Student Chapter</span>, contributing to
-  hands-on engineering projects across power electronics, embedded systems, and biomedical devices.</p>
-  <div style="margin-top:.7rem">
-  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">POWER_SYS</span><span class="pin-desc">Power supply &amp; circuit design</span></div>
-  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">EMBEDDED</span><span class="pin-desc">Microcontroller firmware</span></div>
-  <div class="ds-signal"><span class="pin-num">IN3</span><span class="pin-name">PCB_LAY</span><span class="pin-desc">PCB design &amp; fabrication</span></div>
-  <div class="ds-signal"><span class="pin-num">IN4</span><span class="pin-name">BME_SYS</span><span class="pin-desc">Biomedical instrumentation</span></div>
-  <div class="ds-signal"><span class="pin-num">OUT</span><span class="pin-name">IEEE_UCF</span><span class="pin-desc">IEEE UCF Active Member ✓</span></div>
-  </div>
+  <h3>// NORTHROP GRUMMAN — Associate Electromechanical Engineer</h3>
+  <p style="color:var(--amber);font-size:.7rem;margin-bottom:.5rem">Jun 2025 – Present &nbsp;·&nbsp; Melbourne, FL</p>
+  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">AUTOCAD_ELEC</span><span class="pin-desc">Wiring diagrams &amp; harness layouts (MIL-STD-1553/1760)</span></div>
+  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">IACAMO</span><span class="pin-desc">Instrumentation diagrams for the IACAMO Program</span></div>
+  <div class="ds-signal"><span class="pin-num">IN3</span><span class="pin-name">AGILE</span><span class="pin-desc">End-to-end review cycle with peer reviews &amp; approvals</span></div>
 </div>
 <div class="ds-section">
-  <h3>// TRUTH TABLE</h3>
-  <div class="ds-pre">PROBLEM(A) + TEAM(B) → OUTPUT(Y)
-─────────────────────────────────
-A=0  B=0  →  Y=0  (idle)
-A=0  B=1  →  Y=1  (support mode)
-A=1  B=0  →  Y=0  (blocked)
-A=1  B=1  →  Y=1  (SOLUTION ✓)
+  <h3>// MITSUBISHI POWER AMERICAS — Associate Control Systems Engineer</h3>
+  <p style="color:var(--amber);font-size:.7rem;margin-bottom:.5rem">Sep 2024 – May 2025 &nbsp;·&nbsp; Lake Mary, FL</p>
+  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">HMI_CTRL</span><span class="pin-desc">Gas turbine control systems, HMI, control logic</span></div>
+  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">VBA_AUTO</span><span class="pin-desc">Workflow automation saving 300+ hours annually</span></div>
+  <div class="ds-signal"><span class="pin-num">IN3</span><span class="pin-name">IO_TEST</span><span class="pin-desc">Digital &amp; analog I/O communication tests</span></div>
+</div>
+<div class="ds-section">
+  <h3>// NORTHROP GRUMMAN — Lab &amp; Test Engineer Intern</h3>
+  <p style="color:var(--amber);font-size:.7rem;margin-bottom:.5rem">May 2023 – Sep 2024 &nbsp;·&nbsp; Melbourne, FL</p>
+  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">PYTHON</span><span class="pin-desc">Automation scripts in Python, PowerShell &amp; Groovy</span></div>
+  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">IPT_LAB</span><span class="pin-desc">Lab ops across all Integrated Platform Tests (IPTs)</span></div>
+</div>
+<div class="ds-section">
+  <h3>// ADDITIONAL EXPERIENCE</h3>
+  <div class="ds-pre">UCF NANOBIOSENSORS LAB  May 2022 – Jan 2024
+  Wireless BLE bioimpedance sensor (FlexPCB)
+  3D-printed microsensor + microcontroller integration
 
-NOTE: This device is optimized for
-A=1, B=1 operating conditions.</div>
+MTRONPTI — MFG ENGINEER INTERN  Oct 2022 – May 2023
+  Electrical systems, component specs, DFM</div>
 </div>
 <div class="ds-section">
-  <h3>// UCF — ENGINEERING STUDENT</h3>
-  <p>Pursuing dual B.S. in EE &amp; BME with hands-on
-  coursework in circuits, instrumentation, DSP, and ML.
-  Applied learning through PCB fabrication and real-world
-  audio signal analysis.</p>
-  <span class="ds-tag">EE</span><span class="ds-tag">BME</span>
-  <span class="ds-tag">DSP</span><span class="ds-tag">Circuits</span>
-  <span class="ds-tag">IEEE Region 3</span>
+  <h3>// SKILLS</h3>
+  <span class="ds-tag">Python</span><span class="ds-tag">C/C++</span>
+  <span class="ds-tag">PowerShell</span><span class="ds-tag">MATLAB</span>
+  <span class="ds-tag">Verilog</span><span class="ds-tag">AutoCAD Electrical</span>
+  <span class="ds-tag">KiCad/Altium</span><span class="ds-tag">SolidWorks</span>
 </div>`
   },
   {
@@ -468,42 +475,55 @@ A=1, B=1 operating conditions.</div>
   <h3>// PROJECT INDEX</h3>
 </div>
 <div class="proj-entry">
-  <div class="proj-num">#01 — ML / AUDIO DSP &nbsp; <span class="ds-tag">FEATURED</span></div>
-  <div class="proj-name">Room Impulse Response (RIR) ML Project</div>
+  <div class="proj-num">#01 — FULL-STACK / FINANCE &nbsp; <span class="ds-tag">ACTIVE</span></div>
+  <div class="proj-name">Net Worth Projection App</div>
   <div class="proj-body">
-    Machine-learning pipeline for estimating and reconstructing
+    Financial simulation platform built with <span class="ds-hi">Svelte, TypeScript, and Web Workers</span>
+    to model multi-decade retirement outcomes — portfolio growth, cash flow, and
+    withdrawal sustainability for dual-income households.
+  </div>
+  <div>
+    <span class="ds-tag">Svelte</span><span class="ds-tag">TypeScript</span>
+    <span class="ds-tag">Web Workers</span><span class="ds-tag">CSV/JSON</span>
+  </div>
+  <div class="ds-pre" style="margin-top:.6rem">AI-BASED RETURN MODELING
+FAILURE-RATE DETECTION
+8-CHANNEL REAL-TIME COMPUTATION
+EXPORTABLE REPORTING (CSV/JSON)</div>
+</div>
+<div class="proj-entry">
+  <div class="proj-num">#02 — HARDWARE / PCB DESIGN</div>
+  <div class="proj-name">DIY Digital Audio Mixer — UCF Capstone</div>
+  <div class="proj-body">
+    Designed analog circuitry for a low-cost, high-performance audio mixer.
+    Four separate compact <span class="ds-hi">4-layer PCBs</span> (Power Supply, STM32 MCU,
+    Analog Signal, Digital Signal). DSP algorithms on a Raspberry Pi 5 system.
+  </div>
+  <div>
+    <span class="ds-tag">KiCad</span><span class="ds-tag">STM32</span>
+    <span class="ds-tag">Raspberry Pi 5</span><span class="ds-tag">Audio DSP</span>
+    <span class="ds-tag">4-Layer PCB</span>
+  </div>
+  <div class="ds-pre" style="margin-top:.6rem">SNR     : 50 dB
+LATENCY : &lt;10ms
+CHANNELS: 8 (real-time)
+AI      : Automixing feature</div>
+</div>
+<div class="proj-entry">
+  <div class="proj-num">#03 — ML / AUDIO DSP</div>
+  <div class="proj-name">Room Impulse Response (RIR) ML</div>
+  <div class="proj-body">
+    ML pipeline for estimating and reconstructing
     <span class="ds-hi">Room Impulse Responses</span> from acoustic measurements.
-    Establishes a baseline WaveUNet model, then refactors toward a
-    modular, production-quality DSP system.
+    Baseline WaveUNet model with modular DSP architecture.
   </div>
   <div>
     <span class="ds-tag">Python</span><span class="ds-tag">PyTorch</span>
-    <span class="ds-tag">SciPy</span><span class="ds-tag">Jupyter</span>
-    <span class="ds-tag">HuggingFace</span><span class="ds-tag">Audio DSP</span>
+    <span class="ds-tag">SciPy</span><span class="ds-tag">HuggingFace</span>
   </div>
   <p style="margin-top:.7rem">
     <a class="ds-link" href="https://github.com/mwmeyers03/RIR_Project" target="_blank" rel="noopener">→ github.com/mwmeyers03/RIR_Project</a>
   </p>
-  <div class="ds-pre" style="margin-top:.6rem">MODEL   : WaveUNet-RIR
-TRAIN   : 0.0821 loss
-VAL     : 0.0943 loss
-PARAMS  : 2.4M
-DATASET : HuggingFace acoustic IR</div>
-</div>
-<div class="proj-entry">
-  <div class="proj-num">#02 — HARDWARE / PCB DESIGN</div>
-  <div class="proj-name">Digital Audio System PCB</div>
-  <div class="proj-body">
-    Designed the <span class="ds-hi">printed circuit boards</span> for a digital
-    audio processing system. Responsible for schematic capture, component selection,
-    layer stackup, trace routing, and DFM review — ensuring signal integrity
-    across high-speed audio data paths.
-  </div>
-  <div>
-    <span class="ds-tag">PCB Design</span><span class="ds-tag">Schematic Capture</span>
-    <span class="ds-tag">Signal Integrity</span><span class="ds-tag">Audio Electronics</span>
-    <span class="ds-tag">DFM</span>
-  </div>
 </div>`
   },
   {
@@ -514,9 +534,8 @@ DATASET : HuggingFace acoustic IR</div>
     buildPanel: () => `
 <div class="ds-section">
   <h3>// CONNECTOR DESCRIPTION</h3>
-  <p>Output connector. Compatible with internship, co-op, research,
-  and project collaboration interfaces.
-  <span class="ds-hi">Currently seeking new connections.</span></p>
+  <p>Output connector. Wired for research, collaborations, and project work.
+  <span class="ds-hi">Open to new connections.</span></p>
 </div>
 <div class="ds-section">
   <h3>// PIN ASSIGNMENTS</h3>
@@ -526,24 +545,25 @@ DATASET : HuggingFace acoustic IR</div>
   <div class="ds-signal"><span class="pin-num">2</span><span class="pin-name">LINKEDIN</span>
     <span class="pin-desc"><a class="ds-link" href="https://linkedin.com/in/mwmeyers03" target="_blank" rel="noopener">linkedin.com/in/mwmeyers03</a></span>
   </div>
-  <div class="ds-signal"><span class="pin-num">3</span><span class="pin-name">LOCATION</span>
-    <span class="pin-desc">Orlando, FL — UCF Campus</span>
+  <div class="ds-signal"><span class="pin-num">3</span><span class="pin-name">EMAIL</span>
+    <span class="pin-desc"><a class="ds-link" href="mailto:mwmeyers03@gmail.com">mwmeyers03@gmail.com</a></span>
+  </div>
+  <div class="ds-signal"><span class="pin-num">4</span><span class="pin-name">LOCATION</span>
+    <span class="pin-desc">Melbourne, FL</span>
   </div>
   <div class="ds-signal"><span class="pin-num">GND</span><span class="pin-name">REFERENCE</span>
-    <span class="pin-desc">Common ground — EE + BME</span>
+    <span class="pin-desc">Common ground — EE + M.S.</span>
   </div>
 </div>
 <div class="ds-section">
   <h3>// MATING SPECIFICATIONS</h3>
   <div class="ds-pre">COMPATIBLE WITH:
-  • Internship opportunities (EE/BME)
-  • Research positions (DSP/ML/Hardware)
-  • Project collaborations
-  • Co-op positions
+  • Research collaborations
+  • Side projects &amp; open source
+  • Graduate research opportunities
+  • Engineering discussions
 
-INTERFACE: Email / LinkedIn / GitHub
-IMPEDANCE: 50Ω matched
-MAX CURRENT: Open to full-time offers</div>
+INTERFACE: Email / LinkedIn / GitHub</div>
 </div>
 <div class="ds-section">
   <h3>// ABSOLUTE MAXIMUM RATINGS</h3>
@@ -703,8 +723,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
   const camera = new THREE.PerspectiveCamera(52, W() / H(), 0.1, 200);
 
   // Camera spherical coords
-  const cam = { theta: 0.55, phi: 0.72, r: 22, tx: 0, ty: 0, tz: 0 };
-  const camTarget = { theta: 0.55, phi: 0.72, r: 22 };
+  const cam = { theta: 0.55, phi: 0.12, r: 22, tx: 0, ty: 0, tz: 0 };
+  const camTarget = { theta: 0.55, phi: 0.12, r: 22 };
   function applyCam() {
     camera.position.set(
       cam.tx + cam.r * Math.sin(cam.phi) * Math.sin(cam.theta),
@@ -990,8 +1010,29 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
     }
   }
 
-  canvas.addEventListener('mousemove', updateHover);
+  /* ── MOUSE ORBIT + HOVER ── */
+  let isDragging = false, dragX = 0, dragY = 0, dragTheta0 = 0, dragPhi0 = 0, dragMoved = false;
+
+  canvas.addEventListener('mousedown', e => {
+    if (panelOpen) return;
+    isDragging = true; dragMoved = false;
+    dragX = e.clientX; dragY = e.clientY;
+    dragTheta0 = cam.theta; dragPhi0 = cam.phi;
+  });
+
+  canvas.addEventListener('mousemove', e => {
+    updateHover(e);
+    if (!isDragging) return;
+    const dx = e.clientX - dragX, dy = e.clientY - dragY;
+    if (Math.abs(dx) + Math.abs(dy) > 3) dragMoved = true;
+    cam.theta = dragTheta0 - dx * 0.007;
+    cam.phi = Math.max(0.05, Math.min(1.45, dragPhi0 + dy * 0.006));
+  });
+
+  window.addEventListener('mouseup', () => { isDragging = false; });
+
   canvas.addEventListener('click', e => {
+    if (dragMoved) { dragMoved = false; return; }
     updateHover(e);
     if (hoveredChip >= 0) openPanel(hoveredChip);
   });
@@ -1002,13 +1043,16 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
   }, { passive: false });
 
   /* ── TOUCH SUPPORT ── */
-  let lastTouchDist = 0;
+  let lastTouchDist = 0, touchX0 = 0, touchY0 = 0, touchTheta0 = 0, touchPhi0 = 0, touchMoved = false;
   canvas.addEventListener('touchstart', e => {
     if (e.touches.length === 2) {
       lastTouchDist = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
       );
+    } else if (e.touches.length === 1) {
+      touchX0 = e.touches[0].clientX; touchY0 = e.touches[0].clientY;
+      touchTheta0 = cam.theta; touchPhi0 = cam.phi; touchMoved = false;
     }
   }, { passive: true });
   canvas.addEventListener('touchmove', e => {
@@ -1019,6 +1063,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
       );
       cam.r = Math.max(9, Math.min(38, cam.r - (d - lastTouchDist) * 0.05));
       lastTouchDist = d;
+    } else if (e.touches.length === 1) {
+      const dx = e.touches[0].clientX - touchX0, dy = e.touches[0].clientY - touchY0;
+      if (Math.abs(dx) + Math.abs(dy) > 3) touchMoved = true;
+      cam.theta = touchTheta0 - dx * 0.007;
+      cam.phi = Math.max(0.05, Math.min(1.45, touchPhi0 + dy * 0.006));
     }
     e.preventDefault();
   }, { passive: false });
