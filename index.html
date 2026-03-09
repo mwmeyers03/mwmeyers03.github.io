@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Matthew Meyers | EE Portfolio</title>
-<meta name="description" content="Interactive PCB portfolio — Matthew Meyers, EE &amp; BME @ UCF"/>
+<title>Michael Meyers | EE Portfolio</title>
+<meta name="description" content="Interactive PCB portfolio — Michael Meyers, EE &amp; BME @ UCF"/>
 <script src="three.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
@@ -288,20 +288,19 @@ nav{
 </div>
 <div id="hud-fps"><span class="lbl">FPS</span> —</div>
 <div id="hud-hint">
-  <span class="key">DRAG</span> orbit &nbsp;|&nbsp;
   <span class="key">SCROLL</span> zoom &nbsp;|&nbsp;
   <span class="key">CLICK</span> probe chip
 </div>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="resetCamera()">PCB<span>://</span>MEYERS</div>
+  <div class="nav-logo" onclick="closePanel()">PCB<span>://</span>MEYERS</div>
   <ul class="nav-chips">
-    <li><button onclick="focusChip(0)">U1&nbsp;MAIN</button></li>
-    <li><button onclick="focusChip(1)">U2&nbsp;EDU</button></li>
-    <li><button onclick="focusChip(2)">U3&nbsp;EXP</button></li>
-    <li><button onclick="focusChip(3)">U4&nbsp;PROJ</button></li>
-    <li><button onclick="focusChip(4)">J1&nbsp;CONTACT</button></li>
+    <li><button onclick="openPanel(0)">U1&nbsp;MAIN</button></li>
+    <li><button onclick="openPanel(1)">U2&nbsp;EDU</button></li>
+    <li><button onclick="openPanel(2)">U3&nbsp;EXP</button></li>
+    <li><button onclick="openPanel(3)">U4&nbsp;PROJ</button></li>
+    <li><button onclick="openPanel(4)">J1&nbsp;CONTACT</button></li>
   </ul>
 </nav>
 
@@ -328,7 +327,7 @@ const CHIPS = [
     ref: 'U1', name: 'MEYERS_MCU', part: 'MEYERS-01-UCF',
     pos: [0, 0.3, 0], size: [3.4, 0.5, 2.6], color: 0x0d2010,
     pinColor: 0x00e87a,
-    title: 'Matthew Meyers',
+    title: 'Michael Meyers',
     buildPanel: () => `
 <div class="ds-section">
   <h3>// DESCRIPTION</h3>
@@ -420,22 +419,20 @@ GOAL    = ADVANCE(medical_technology)</div>
   <h3>// FUNCTIONAL DESCRIPTION</h3>
   <p>High-speed CMOS project engineering IC.
   Implements multi-domain problem solving across
-  <span class="ds-hi">power electronics, robotics, LiDAR navigation,</span>
+  <span class="ds-hi">power electronics, embedded systems,</span>
   and <span class="ds-hi">biomedical applications</span>.</p>
 </div>
 <div class="ds-section">
   <h3>// IEEE UCF — PROJECT ENGINEER</h3>
   <p style="color:var(--amber);font-size:.7rem;margin-bottom:.5rem">IEEE UCF Student Chapter · Orlando, FL</p>
-  <p>Contributed to <span class="ds-hi">Phantom Arms</span> — a virus surface-disinfection
-  robot funded by the <span class="ds-warn">IEEE Region 3 Pandemic Grant</span>.
-  Designed to autonomously navigate and sanitize high-risk environments.</p>
+  <p>Active member of the <span class="ds-hi">IEEE UCF Student Chapter</span>, contributing to
+  hands-on engineering projects across power electronics, embedded systems, and biomedical devices.</p>
   <div style="margin-top:.7rem">
-  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">POWER_SYS</span><span class="pin-desc">Power supply subsystem design</span></div>
-  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">LIDAR</span><span class="pin-desc">Navigation &amp; obstacle avoidance</span></div>
-  <div class="ds-signal"><span class="pin-num">IN3</span><span class="pin-name">VIROLOGY</span><span class="pin-desc">UV disinfection payload</span></div>
-  <div class="ds-signal"><span class="pin-num">IN4</span><span class="pin-name">MECHANICS</span><span class="pin-desc">Mechanical integration</span></div>
-  <div class="ds-signal"><span class="pin-num">IN5</span><span class="pin-name">SMART_NAV</span><span class="pin-desc">Autonomous navigation control</span></div>
-  <div class="ds-signal"><span class="pin-num">OUT</span><span class="pin-name">SHOWCASE</span><span class="pin-desc">Presented at IEEE UCF Showcase ✓</span></div>
+  <div class="ds-signal"><span class="pin-num">IN1</span><span class="pin-name">POWER_SYS</span><span class="pin-desc">Power supply &amp; circuit design</span></div>
+  <div class="ds-signal"><span class="pin-num">IN2</span><span class="pin-name">EMBEDDED</span><span class="pin-desc">Microcontroller firmware</span></div>
+  <div class="ds-signal"><span class="pin-num">IN3</span><span class="pin-name">PCB_LAY</span><span class="pin-desc">PCB design &amp; fabrication</span></div>
+  <div class="ds-signal"><span class="pin-num">IN4</span><span class="pin-name">BME_SYS</span><span class="pin-desc">Biomedical instrumentation</span></div>
+  <div class="ds-signal"><span class="pin-num">OUT</span><span class="pin-name">IEEE_UCF</span><span class="pin-desc">IEEE UCF Active Member ✓</span></div>
   </div>
 </div>
 <div class="ds-section">
@@ -506,20 +503,6 @@ DATASET : HuggingFace acoustic IR</div>
     <span class="ds-tag">PCB Design</span><span class="ds-tag">Schematic Capture</span>
     <span class="ds-tag">Signal Integrity</span><span class="ds-tag">Audio Electronics</span>
     <span class="ds-tag">DFM</span>
-  </div>
-</div>
-<div class="proj-entry">
-  <div class="proj-num">#03 — ROBOTICS / POWER ELECTRONICS</div>
-  <div class="proj-name">Phantom Arms — Disinfection Robot</div>
-  <div class="proj-body">
-    Autonomous surface-disinfection robot built for the
-    <span class="ds-hi">IEEE Region 3 Pandemic Grant</span>.
-    Modular architecture: LiDAR navigation, UV payload,
-    power management, and mechanical integration.
-  </div>
-  <div>
-    <span class="ds-tag">Robotics</span><span class="ds-tag">LiDAR</span>
-    <span class="ds-tag">Power Electronics</span><span class="ds-tag">IEEE UCF</span>
   </div>
 </div>`
   },
@@ -927,22 +910,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
     str.position.set(x, 0.48, z); scene.add(str);
   });
 
-  // Resistors (small boxes with bands)
-  [[-3.5, -1.8, 0], [3, -1.2, 0.4], [7.5, 0, 0], [-7, 2.5, 0.3]].forEach(([x, z, rot]) => {
-    const rg = new THREE.BoxGeometry(0.55, 0.18, 0.22);
-    const rm = new THREE.MeshBasicMaterial({ color: 0xc8a070 });
-    const res = new THREE.Mesh(rg, rm);
-    res.position.set(x, 0.2, z); res.rotation.y = rot; scene.add(res);
-    // color bands
-    [0x00e87a, 0xff3b30, 0xffb700].forEach((bc, bi) => {
-      const bg = new THREE.BoxGeometry(0.06, 0.2, 0.24);
-      const bm = new THREE.MeshBasicMaterial({ color: bc });
-      const band = new THREE.Mesh(bg, bm);
-      band.position.set(x + (bi - 1) * 0.13, 0.2, z);
-      band.rotation.y = rot; scene.add(band);
-    });
-  });
-
   // Crystal oscillator (Y1)
   const yg = new THREE.CylinderGeometry(0.18, 0.18, 0.5, 12);
   const ym = new THREE.MeshBasicMaterial({ color: 0x606870 });
@@ -998,7 +965,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
   /* ── RAYCASTING ── */
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
-  let wasDragging = false;
   let hoveredChip = -1;
   const chipOrigColors = CHIPS.map(c => c.color);
 
@@ -1026,42 +992,19 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
 
   canvas.addEventListener('mousemove', updateHover);
   canvas.addEventListener('click', e => {
-    if (wasDragging) { wasDragging = false; return; }
     updateHover(e);
     if (hoveredChip >= 0) openPanel(hoveredChip);
   });
 
-  /* ── CAMERA ORBIT ── */
-  let isDragging = false, startDrag = { x: 0, y: 0 }, startCam = { theta: 0, phi: 0 };
-  const MIN_PHI = 0.22, MAX_PHI = Math.PI / 2.1;
-
-  canvas.addEventListener('mousedown', e => {
-    if (e.button !== 0) return;
-    isDragging = true; wasDragging = false;
-    startDrag = { x: e.clientX, y: e.clientY };
-    startCam = { theta: cam.theta, phi: cam.phi };
-  });
-  window.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    const dx = e.clientX - startDrag.x, dy = e.clientY - startDrag.y;
-    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) wasDragging = true;
-    cam.theta = startCam.theta - dx * 0.008;
-    cam.phi = Math.max(MIN_PHI, Math.min(MAX_PHI, startCam.phi + dy * 0.006));
-  });
-  window.addEventListener('mouseup', () => { isDragging = false; });
   canvas.addEventListener('wheel', e => {
     e.preventDefault();
     cam.r = Math.max(9, Math.min(38, cam.r + e.deltaY * 0.04));
   }, { passive: false });
 
   /* ── TOUCH SUPPORT ── */
-  let lastTouchDist = 0, touchDragging = false, touchStart = { x: 0, y: 0 }, touchCam = { theta: 0, phi: 0 };
+  let lastTouchDist = 0;
   canvas.addEventListener('touchstart', e => {
-    if (e.touches.length === 1) {
-      touchDragging = true;
-      touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-      touchCam = { theta: cam.theta, phi: cam.phi };
-    } else if (e.touches.length === 2) {
+    if (e.touches.length === 2) {
       lastTouchDist = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
@@ -1069,11 +1012,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
     }
   }, { passive: true });
   canvas.addEventListener('touchmove', e => {
-    if (e.touches.length === 1 && touchDragging) {
-      const dx = e.touches[0].clientX - touchStart.x, dy = e.touches[0].clientY - touchStart.y;
-      cam.theta = touchCam.theta - dx * 0.01;
-      cam.phi = Math.max(MIN_PHI, Math.min(MAX_PHI, touchCam.phi + dy * 0.008));
-    } else if (e.touches.length === 2) {
+    if (e.touches.length === 2) {
       const d = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
@@ -1083,29 +1022,13 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
     }
     e.preventDefault();
   }, { passive: false });
-  canvas.addEventListener('touchend', e => {
-    if (e.touches.length === 0) touchDragging = false;
-  }, { passive: true });
 
   /* ── KEYBOARD NAV ── */
   document.addEventListener('keydown', e => {
     if (panelOpen) return;
     const map = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4 };
-    if (map[e.key] !== undefined) { focusChip(map[e.key]); openPanel(map[e.key]); }
+    if (map[e.key] !== undefined) { openPanel(map[e.key]); }
   });
-
-  /* ── CHIP FOCUS CAMERA ── */
-  window.focusChip = function(idx) {
-    const [cx, , cz] = CHIPS[idx].pos;
-    cam.tx = cx * 0.3; cam.tz = cz * 0.3;
-    cam.r = 14;
-    cam.theta += (Math.atan2(cx - cam.tx, cz - cam.tz) - cam.theta) * 0.1;
-  };
-  window.resetCamera = function() {
-    cam.tx = 0; cam.ty = 0; cam.tz = 0;
-    cam.theta = 0.55; cam.phi = 0.72; cam.r = 22;
-    closePanel();
-  };
 
   /* ── CHIP LABEL UPDATER ── */
   const clEls = Array.from(document.querySelectorAll('.cl'));
