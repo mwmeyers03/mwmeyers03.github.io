@@ -1114,6 +1114,9 @@ function selectSection(idx) {
   waveType = SECTIONS[idx].wave;
   waveFreq = SECTIONS[idx].freq;
   document.getElementById('meas-freq').textContent = waveFreq + ' Hz';
+  // Re-render dynamic sections after content is injected into DOM
+  if (idx === 5) buildProjectsSection();
+  if (idx === 6) buildGitHubSection(_cachedRepos);
 }
 
 // Init first section and attach click handlers
@@ -1733,7 +1736,9 @@ function initPCBScene() {
    GITHUB AUTO-FETCH + PROJECTS/GITHUB SECTIONS
 ═══════════════════════════════════════════════ */
 const GITHUB_USER = 'mwmeyers03';
+// Repos to exclude from PCB auto-discovery: portfolio infrastructure, profile README, test repos, resume source
 const SKIP_REPOS = new Set(['mwmeyers03.github.io','mwmeyers03','test','Resume']);
+let _cachedRepos = null;
 
 function buildProjectsSection() {
   const el = document.getElementById('projects-section-content');
@@ -1758,14 +1763,16 @@ function buildProjectsSection() {
   el.innerHTML = html;
 }
 
-function buildGitHubSection(repos) {
+function buildGitHubSection(repos, errorMsg) {
   const el = document.getElementById('github-section-content');
   if (!el) return;
   let html = `<div class="ds-section">
   <h3>// GITHUB ACTIVITY — github.com/${GITHUB_USER}</h3>
   <p><a class="ds-link" href="https://github.com/${GITHUB_USER}" target="_blank" rel="noopener">View all repositories</a></p>
 </div>`;
-  if (!repos || !repos.length) {
+  if (errorMsg) {
+    html += `<div class="ds-section"><p style="color:var(--amber)">${errorMsg}</p></div>`;
+  } else if (!repos || !repos.length) {
     html += `<div class="ds-section"><p style="color:var(--muted)">Fetching data...</p></div>`;
   } else {
     html += `<div class="ds-section"><h3>// RECENT REPOSITORIES</h3>`;
@@ -1789,8 +1796,12 @@ function buildGitHubSection(repos) {
 async function fetchGitHubData() {
   try {
     const resp = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=100`);
-    if (!resp.ok) return;
+    if (!resp.ok) {
+      buildGitHubSection(null, `GitHub API returned ${resp.status}. Try again later.`);
+      return;
+    }
     const repos = await resp.json();
+    _cachedRepos = repos;
     buildGitHubSection(repos);
 
     // Auto-discover new repos not already in PROJECTS
@@ -1838,26 +1849,27 @@ UPDATED:  ${new Date(r.updated_at).toLocaleDateString()}</div>
     }
   } catch(e) {
     console.warn('GitHub API fetch failed:', e);
-    buildGitHubSection(null);
+    buildGitHubSection(null, 'Unable to reach GitHub API. Check connection or rate limit.');
   }
 }
 
 async function fetchResumeUpdate() {
   try {
     const resp = await fetch(`https://api.github.com/repos/${GITHUB_USER}/Resume/commits?per_page=1`);
-    if (!resp.ok) return;
+    const el = document.getElementById('cv-last-updated');
+    if (!resp.ok) {
+      if (el) el.textContent = 'Resume repo: unable to fetch update date';
+      return;
+    }
     const commits = await resp.json();
     if (commits && commits.length) {
       const d = new Date(commits[0].commit.author.date);
-      const el = document.getElementById('cv-last-updated');
       if (el) el.textContent = `Resume repo last updated: ${d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'})}`;
     }
-  } catch(e) { /* silent */ }
+  } catch(e) { /* silent — resume date is supplemental info only */ }
 }
 
 // Initialize dynamic sections and fetch data
-buildProjectsSection();
-buildGitHubSection(null);
 fetchGitHubData();
 fetchResumeUpdate();
 </script>
