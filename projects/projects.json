@@ -1,0 +1,95 @@
+[
+  {
+    "ref": "P1",
+    "name": "NET_WORTH",
+    "part": "SVT-TS-WORKERS-R1",
+    "title": "Net Worth Projection App",
+    "githubRepo": null,
+    "liveUrl": null,
+    "skills": ["Svelte", "TypeScript", "Web Workers", "Finance Modeling", "Scenario Analysis"],
+    "description": "Financial simulation platform modeling multi-decade retirement outcomes — portfolio growth, cash flow, and withdrawal sustainability for dual-income households.",
+    "techStack": ["Svelte", "TypeScript", "Web Workers", "CSV/JSON export"],
+    "highlights": [
+      "Conservative / Expected / Aggressive scenario engine",
+      "Allocation-based return modeling with failure-year detection",
+      "8-channel real-time computation with exportable reporting"
+    ],
+    "status": "ACTIVE",
+    "date": "Feb 2026 – Present"
+  },
+  {
+    "ref": "P2",
+    "name": "AUDIO_MXR",
+    "part": "STM32-4L-PCB-R2",
+    "title": "DIY Digital Audio Mixer",
+    "githubRepo": null,
+    "liveUrl": null,
+    "skills": ["KiCad", "STM32", "Raspberry Pi 5", "4-Layer PCB", "DSP", "Python", "Analog Design", "Phantom Power"],
+    "description": "UCF Capstone. Four 4-layer PCBs (Power Supply, STM32 MCU, Analog Signal, Digital Signal). DSP on RPi5. SNR 50 dB, <10 ms latency, 8-channel real-time processing, AI automixing.",
+    "techStack": ["KiCad", "STM32", "Raspberry Pi 5", "Audio DSP", "4-Layer PCB", "Python"],
+    "highlights": [
+      "Four separate compact 4-layer PCBs accommodating full mixed-signal chain",
+      "Phantom power capability; STM32 MCU and analog/digital signal boards",
+      "SNR: 50 dB  |  Latency: <10 ms  |  Channels: 8 (real-time)",
+      "AI automixing feature via webapp control interface"
+    ],
+    "status": "COMPLETE",
+    "date": "May 2024 – May 2025"
+  },
+  {
+    "ref": "P3",
+    "name": "RIR_ML",
+    "part": "PY-WUNET-TORCH-R1",
+    "title": "Room Impulse Response ML",
+    "githubRepo": "RIR_Project",
+    "liveUrl": null,
+    "skills": ["Python", "PyTorch", "SciPy", "HuggingFace", "DSP", "Audio ML", "WaveUNet"],
+    "description": "ML pipeline for estimating and reconstructing Room Impulse Responses from acoustic measurements. Baseline WaveUNet model with modular DSP architecture and ablation testing.",
+    "techStack": ["Python", "PyTorch", "SciPy", "HuggingFace", "WaveUNet"],
+    "highlights": [
+      "End-to-end RIR estimation from raw microphone recordings",
+      "WaveUNet baseline with modular, swappable DSP architecture",
+      "ISO 3382 compliant RT60 / clarity metrics evaluation"
+    ],
+    "status": "ACTIVE",
+    "date": "Mar 2026 – Present"
+  },
+  {
+    "ref": "P4",
+    "name": "ACST_LENS",
+    "part": "JS-STFT-FIR-R1",
+    "title": "AcousticLens WebDSP",
+    "githubRepo": "AcousticLens-WebDSP",
+    "liveUrl": "https://mwmeyers03.github.io/AcousticLens-WebDSP/",
+    "skills": ["JavaScript", "STFT", "FIR Filters", "IFFT", "ISO 226:2023", "IEEE Std 1241", "Browser DSP"],
+    "description": "Real-time, zero-dependency browser DSP toolchain. Implements STFT acoustic fingerprinting and interactive FIR filter design via IFFT, adhering to ISO 226:2023 and IEEE Std 1241.",
+    "techStack": ["JavaScript", "Web Audio API", "STFT", "FIR / IFFT", "Canvas"],
+    "highlights": [
+      "Zero-dependency: pure JavaScript, no external libraries",
+      "STFT acoustic fingerprinting with configurable window parameters",
+      "Interactive FIR filter design via Inverse FFT",
+      "ISO 226:2023 equal-loudness compliance"
+    ],
+    "status": "COMPLETE",
+    "date": "Mar 2026"
+  },
+  {
+    "ref": "P5",
+    "name": "QPSK_SIM",
+    "part": "PY-RRC-BER-R1",
+    "title": "QPSK Baseband Transceiver Sim",
+    "githubRepo": "QPSK-Baseband-Transceiver-Sim",
+    "liveUrl": null,
+    "skills": ["Python", "QPSK", "Root-Raised Cosine", "BER", "AWGN Channel", "ETSI EN 302 307", "Matched Filter"],
+    "description": "End-to-end QPSK digital comm link simulation. RRC pulse shaping, AWGN channel model, matched filter reception, empirical BER vs. theoretical limits per ETSI EN 302 307.",
+    "techStack": ["Python", "NumPy", "SciPy", "Matplotlib", "QPSK modulator/demodulator"],
+    "highlights": [
+      "Root-Raised Cosine (RRC) pulse shaping with configurable roll-off",
+      "AWGN channel model across full Eb/N0 sweep",
+      "Matched filter reception with BER-vs-theory comparison",
+      "ETSI EN 302 307 standard compliance validation"
+    ],
+    "status": "COMPLETE",
+    "date": "Mar 2026"
+  }
+]
