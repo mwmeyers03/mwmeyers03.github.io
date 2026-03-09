@@ -723,8 +723,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
   const camera = new THREE.PerspectiveCamera(52, W() / H(), 0.1, 200);
 
   // Camera spherical coords
-  const cam = { theta: 0.55, phi: 0.12, r: 22, tx: 0, ty: 0, tz: 0 };
-  const camTarget = { theta: 0.55, phi: 0.12, r: 22 };
+  const cam = { theta: 0, phi: 0.06, r: 22, tx: 0, ty: 0, tz: 0 };
+  const camTarget = { theta: 0, phi: 0.06, r: 22 };
   function applyCam() {
     camera.position.set(
       cam.tx + cam.r * Math.sin(cam.phi) * Math.sin(cam.theta),
